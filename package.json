@@ -1,0 +1,15 @@
+{
+  "name": "vue2.0-demo",
+  "version": "1.0.0",
+  "description": "a demo of vue2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "animate"
+  ],
+  "author": "Eternal Zhao",
+  "license": "ISC"
+}
