@@ -10,7 +10,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 config.devtool = 'inline-source-map';
 config.output.filename = '[name].js';
 config.devServer = {
-    port: 8084,
+    port: 8082,
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 }
 };
@@ -21,7 +21,7 @@ config.plugins = (config.plugins || []).concat([
         inject: 'body'
     }),
     new OpenBrowserPlugin({
-        url: 'http://localhost:8084'
+        url: 'http://localhost:8082'
     }),
     new webpack.DefinePlugin({
         'process.env': {
