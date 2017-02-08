@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <title>VueDemo</title>
     <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
 </head>
 <body>
     <div id="demo">
     </div>
+    <a-scene>
+        <a-assets>
+            <img id="lake" src="./images/lake.jpg">
+        </a-assets>
+        <a-torus color="#43A367" arc="270" radius="5" radius-tubular="0.1" rotation="0 0 -45"></a-torus>
+        <a-sound src="src: url(./images/demo.mp3)" autoplay="true" position="0 -3 0"></a-sound>
+        <a-entity>
+            <a-animation attribute="position" from="0 0 100" to="0 -2 8" dur="8000"></a-animation>
+            <a-camera></a-camera>
+        </a-entity>
+        <a-sky src="#lake"></a-sky>
+    </a-scene>
 </body>
 </html>

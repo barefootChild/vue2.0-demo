@@ -4,7 +4,6 @@
   "description": "a demo of vue2.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.dev.config.js --host 0.0.0.0 --inline --progress --compress --profile --colors --watch --hot --display-error-details  --content-base src/",
     "build": "rimraf dist && webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached  --bail"
   },

@@ -1,1 +1,1 @@
-A demo of vue 2.0
+A demo of vue 2.0 and webVR
