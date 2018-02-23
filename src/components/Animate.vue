@@ -6,12 +6,15 @@
                     leave-active-class="animated bounceOutRight">
             <p v-if="show" class="animate-title-bounce">I am appear</p>
         </transition>
+        <button @click="goToText">下一页</button>
     </div>
 </template>
 <style rel="stylesheet/scss" type="text/css" lang="sass">
     .components-animate-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         box-sizing: border-box;
-        height: 40px;
         border-radius: 5px;
         padding: 10px 0;
         background:
@@ -39,6 +42,12 @@
 
         created(){
             setTimeout(() => (this.show = true), 0);
+        },
+
+        methods: {
+            goToText(){
+                this.$router.push({name: 'text'});
+            }
         }
     }
 </script>
