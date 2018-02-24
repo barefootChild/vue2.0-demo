@@ -4,14 +4,17 @@
                     name="diy-transition"
                     enter-active-class="animated bounceInDown"
                     leave-active-class="animated bounceOutRight">
-            <p v-if="show" class="animate-title-bounce">I am appear</p>
+            <p v-if="show" class="animate-title-bounce">{{`${count}-${odd}`}}</p>
         </transition>
         <button @click="goToText">下一页</button>
     </div>
 </template>
-<style rel="stylesheet/scss" type="text/css" lang="sass">
+<style>
     .components-animate-main {
+        position: absolute;
         display: flex;
+        width: 100%;
+        top: 54px;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
@@ -33,21 +36,29 @@
     }
 </style>
 <script>
-    export default{
-        data(){
-            return{
-                show: false
-            }
-        },
-
-        created(){
-            setTimeout(() => (this.show = true), 0);
-        },
-
-        methods: {
-            goToText(){
-                this.$router.push({name: 'text'});
-            }
+import {mapState, mapGetters, mapActions} from 'vuex';
+export default{
+    data(){
+        return{
+            show: false
         }
+    },
+
+    created(){
+        setTimeout(() => (this.show = true), 0);
+    },
+
+    computed: {
+        ...mapState({count: state => state.a.count}),
+        ...mapGetters(['odd'])
+    },
+
+    methods: {
+        goToText(){
+            this.$router.push({name: 'text'});
+            this.decrement(1);
+        },
+        ...mapActions(['decrement'])
     }
+}
 </script>
